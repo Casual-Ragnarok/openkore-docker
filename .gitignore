@@ -1,0 +1,5 @@
+.env
+volumes/openkore
+
+logs/*
+*.log

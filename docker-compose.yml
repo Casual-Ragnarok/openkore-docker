@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  openkore:
+    # image: expm02/openkore-docker:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: openkore
+    hostname: openkore
+    environment:
+      - TZ=Asia/Shanghai
+      - LANG=zh_CN.UTF-8
+      - LANGUAGE=zh_CN.UTF-8
+      - LC_ALL=zh_CN.UTF-8
+    volumes:
+      - ./volumes/openkore:/app/custom/openkore
+    networks:
+      openkore-net:
+        ipv4_address: 172.168.99.2
+    restart: on-failure
+
+
+networks:
+  openkore-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet:  172.168.99.0/24
+          gateway: 172.168.99.1
