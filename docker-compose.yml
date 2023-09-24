@@ -15,6 +15,7 @@ services:
       - LC_ALL=zh_CN.UTF-8
     volumes:
       - ./volumes/openkore:/app/custom/openkore
+      - ./logs/openkore:/app/openkore/logs
     networks:
       openkore-net:
         ipv4_address: 172.168.99.2
