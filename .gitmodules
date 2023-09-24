@@ -1,0 +1,3 @@
+[submodule "openkore"]
+	path = openkore
+	url = https://github.com/OpenKore/openkore
