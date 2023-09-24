@@ -52,7 +52,7 @@ RUN apt-get install -y libcurl4-openssl-dev
 # -----------------------------------------------------
 ARG APP_DIR="/app"
 ARG OPENKORE_NAME="openkore"
-ARG OPENKORE_DIR="${APP_DIR}/${OPENKORE_NAME}"
+ENV OPENKORE_DIR="${APP_DIR}/${OPENKORE_NAME}"
 # 方法一: git 下载仓库（海外网络不好可能会失败）
 RUN git config --global http.postBuffer 524288000 && \
     git config --global http.lowSpeedLimit 0 && \
@@ -83,8 +83,14 @@ RUN cd ${OPENKORE_DIR} && \
     ./compile.exp
 
 
+
+ENV TZ="Asia/Shanghai"
+ENV LANG="zh_CN.UTF-8"
+ENV LANGUAGE="zh_CN.UTF-8"
+ENV LC_ALL="zh_CN.UTF-8"
 WORKDIR ${OPENKORE_DIR}
 ADD ./volumes/bin /bin
 RUN chmod 100 /bin/.docker-entrypoint.sh && \
     chmod 100 /bin/.wrapper.sh
 ENTRYPOINT [ "/bin/.wrapper.sh" ]
+

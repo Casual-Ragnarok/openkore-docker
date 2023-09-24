@@ -8,11 +8,6 @@ services:
       dockerfile: ./Dockerfile
     container_name: openkore
     hostname: openkore
-    environment:
-      - TZ=Asia/Shanghai
-      - LANG=zh_CN.UTF-8
-      - LANGUAGE=zh_CN.UTF-8
-      - LC_ALL=zh_CN.UTF-8
     volumes:
       - ./volumes/openkore:/app/custom/openkore
       - ./logs/openkore:/app/openkore/logs

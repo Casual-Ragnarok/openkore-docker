@@ -8,6 +8,13 @@
 /bin/.docker-entrypoint.sh
 
 
+# 接受外部参数、执行命令 perl openkore.pl --control=xxxxxx
+if [ -n "$1" ]; then
+    cd ${OPENKORE_DIR}
+    perl ./openkore.pl $1
+fi
+
+
 while true ; do
     sleep 600
 done
