@@ -1,11 +1,56 @@
 # openkore-docker
-docker 一键部署 openkore 机器人
+
+> docker 一键部署 openkore 机器人
+
+------
+
+
+## 概要
+
+![](./01.jpg)
+
+
+
+## 目录结构说明
+
+```
+mstream-docker
+├── music ....................... [音乐文件只要放到此目录下即可被识别，支持多目录嵌套]
+├── config ...................... [mStream 配置目录]
+├── docker-compose.yml .......... [mStream 镜像构建脚本]
+├── run.sh ...................... [mStream 服务一键启动脚本]
+├── stop.sh ..................... [mStream 服务一键停止脚本]
+├── imgs ........................ [README 插图目录]
+└── README.md ................... [本仓库说明文档]
+```
+
+## 环境要求
+
+![](https://img.shields.io/badge/Platform-Linux%20amd64-brightgreen.svg) ![](https://img.shields.io/badge/Platform-Mac%20amd64-brightgreen.svg) ![](https://img.shields.io/badge/Platform-Windows%20x64-brightgreen.svg)
+
+
+## 部署步骤
+
+### 1. 项目构建
+
+- 宿主机安装 docker、docker-compose
+- 宿主机安全组/防火墙（iptables/firewall）放行 9000 端口的入口流量
+- 下载仓库： `git clone https://github.com/lyy289065406/mstream-docker /usr/local/mstream-docker`
+- 打开仓库目录： `cd /usr/local/mstream-docker`
+- 构建镜像并运行： `./run.sh -u admin -p admin123`
+- 浏览器访问 [http://127.0.0.1:9000](http://127.0.0.1:9000) 即可使用
+
+> 构建时设置的是 mStream 前端的登录账密
+
+
+
+
 
 多号运行：
 https://forums.openkore.com/viewtopic.php?t=15802
 https://ro.private-servers-game.com/forum.php?mod=viewthread&tid=904
 
-perl -c ./openkore.pl
+perl ./openkore.pl
 
 
 # peek 中获取的密钥按以下顺序使用：
