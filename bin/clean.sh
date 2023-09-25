@@ -8,7 +8,8 @@ echo "clean logs ..."
 rm -rf logs
 
 echo "clean images ..."
-docker rmi -f $(docker images | grep "web-music" | awk '{print $3}')
+IMAGE_NAME="openkore"
+docker rmi -f $(docker images | grep "$IMAGE_NAME" | awk '{print $3}')
 docker rmi -f $(docker images | grep "none" | awk '{print $3}')
 
 echo "finish ."
