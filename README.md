@@ -1,11 +1,21 @@
 # openkore-docker
 
-> docker 一键部署 openkore 机器人
+> docker 一键部署 openkore RO Bot
 
 ------
 
 
 ## 概要
+
+OpenKore 和传统的 RO Bot 不同，它是纯命令行交互、没有 UI 界面，而且支持多平台运行，这就为容器化提供了基础支持。
+
+但因为 OpenKore 的安装依赖大部分都是系统基础依赖，导致与用户环境兼容性的问题突出，解决这些问题本身比安装过程更为繁琐。
+
+而容器化就是目前最好的解决方案。
+
+- 官方 [源码](https://github.com/OpenKore/openkore)
+- 官方 [wiki](https://openkore.com/wiki/Main_Page) 
+- 官方 [论坛](https://forums.openkore.com/)
 
 [![Openkore - AIBot 实机演示](./imgs/01.jpg)](https://www.bilibili.com/video/BV14w411Y78k)
 
@@ -42,14 +52,15 @@ mstream-docker
 ### 1. 项目构建
 
 - 宿主机安装 docker、docker-compose
-- 宿主机安全组/防火墙（iptables/firewall）放行 9000 端口的入口流量
-- 下载仓库： `git clone https://github.com/lyy289065406/mstream-docker /usr/local/mstream-docker`
-- 打开仓库目录： `cd /usr/local/mstream-docker`
-- 构建镜像并运行： `./run.sh -u admin -p admin123`
-- 浏览器访问 [http://127.0.0.1:9000](http://127.0.0.1:9000) 即可使用
+- 下载仓库： `git clone https://github.com/Casual-Ragnarok/openkore-docker`
+- 打开仓库目录： `cd openkore-docker`
+- 构建镜像： `./build.sh|ps1`
 
-> 构建时设置的是 mStream 前端的登录账密
 
+### 设置服务器配置
+
+
+### 终端运行
 
 
 
