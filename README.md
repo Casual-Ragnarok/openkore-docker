@@ -7,7 +7,15 @@
 
 ## 概要
 
-![](./01.jpg)
+[![Openkore - AIBot 实机演示](./imgs/01.jpg)](https://www.bilibili.com/video/BV14w411Y78k)
+
+<details>
+<summary><b>更多实机展示</b></summary>
+<br/>
+
+![](./02.gif)
+
+</details>
 
 
 
