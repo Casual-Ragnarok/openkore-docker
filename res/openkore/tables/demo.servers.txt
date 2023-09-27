@@ -9,7 +9,7 @@
 #####################
 # Official RO Servers
 
-[_YourRO - LocalHost]
+[z_YourRO - LocalHost]
 ip 127.0.0.1
 port 6900
 master_version 1
@@ -27,7 +27,7 @@ private 1
 # sendCryptKeys ${PACKET_OBFUSCATION_KEY1},{PACKET_OBFUSCATION_KEY3},{PACKET_OBFUSCATION_KEY2}
 
 
-[_YourRO - LocalDocker]
+[z_YourRO - LocalDocker]
 ip host.docker.internal
 port 6900
 master_version 1
@@ -45,7 +45,7 @@ private 1
 # sendCryptKeys ${PACKET_OBFUSCATION_KEY1},{PACKET_OBFUSCATION_KEY3},{PACKET_OBFUSCATION_KEY2}
 
 
-[_YourRO - Online]
+[z_YourRO - Online]
 ip ${Your_Server_Public_IP}
 port 6900
 master_version 1
