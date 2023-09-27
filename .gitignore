@@ -1,5 +1,5 @@
 .env
-# res/openkore
+res/openkore
 
 logs/*
 *.log
