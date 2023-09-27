@@ -9,8 +9,9 @@ services:
     container_name: openkore
     hostname: openkore
     volumes:
-      - ./volumes/openkore:/app/custom/openkore
-      - ./logs/openkore:/app/openkore/logs
+      - ./res/openkore:/app/custom/openkore
+      - ./volumes/openkore/control:/app/openkore/control
+      - ./logs:/app/openkore/logs
     networks:
       openkore-net:
         ipv4_address: 172.168.99.2

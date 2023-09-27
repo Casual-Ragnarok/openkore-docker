@@ -7,9 +7,6 @@ FROM expm02/ubuntu-gcc-cmake-docker:latest
 # -----------------------------------------------------
 RUN apt-get update -y
 
-# 0. 用于跳过命令交互
-RUN apt-get install -y expect
-
 # 1. C/C++ compiler
 #    检查命令: g++ -v
 #    已在基础镜像，无需安装
@@ -28,7 +25,7 @@ RUN apt-get install -y libcompress-zlib-perl
 
 # 5. GNU readline
 #    检查命令: gcc -c /root/readlinetest.c
-ADD ./volumes/readlinetest.c /root/readlinetest.c
+ADD ./res/readlinetest.c /root/readlinetest.c
 RUN apt-get install -y libreadline-dev
 
 # 6. Python2
@@ -75,12 +72,9 @@ RUN cd ${APP_DIR} && \
 
 
 # -----------------------------------------------------
-# 编译 openkore
+# 编译 openkore （首次执行会触发编译、Dockerfile 内执行会自动终止交互）
 # -----------------------------------------------------
-ADD ./volumes/compile.exp ${OPENKORE_DIR}/compile.exp
-RUN cd ${OPENKORE_DIR} && \ 
-    chmod a+x compile.exp && \ 
-    ./compile.exp
+RUN cd ${OPENKORE_DIR} && perl ./openkore.pl 
 
 
 
@@ -89,7 +83,7 @@ ENV LANG="zh_CN.UTF-8"
 ENV LANGUAGE="zh_CN.UTF-8"
 ENV LC_ALL="zh_CN.UTF-8"
 WORKDIR ${OPENKORE_DIR}
-ADD ./volumes/bin /bin
+ADD ./res/bin /bin
 RUN chmod 100 /bin/.docker-entrypoint.sh && \
     chmod 100 /bin/.wrapper.sh
 ENTRYPOINT [ "/bin/.wrapper.sh" ]

@@ -1,9 +1,0 @@
-#!/usr/bin/expect -f
-
-# 第一次执行命令会自动编译
-spawn perl ./openkore.pl 
-
-# 当遇到 "请输入你的答案" 时自动发送 Ctrl+C 终止交互
-expect "请输入你的答案"
-send "\003"
-interact

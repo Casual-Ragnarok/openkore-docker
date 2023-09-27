@@ -32,6 +32,36 @@ OpenKore 和传统的 RO Bot 不同，它是纯命令行交互、没有 UI 界�
 ## 目录结构说明
 
 ```
+openkore-docker
+├── LICENSE
+├── imgs
+├── README.md
+├── bin
+│   ├── build.ps1
+│   ├── build.sh
+│   ├── clean.ps1
+│   ├── clean.sh
+│   ├── deploy.ps1
+│   ├── deploy.sh
+│   ├── run.ps1
+│   ├── run.sh
+│   ├── stop.ps1
+│   ├── stop.sh
+│   ├── terminal.ps1
+│   ├── terminal.sh
+│   ├── to_sha256.ps1
+│   └── to_sha256.sh
+├── openkore
+├── Dockerfile
+├── docker-compose.yml
+└── volumes
+    ├── bin
+    ├── compile.exp
+    ├── openkore
+    │   ├── README.md
+    │   └── tables
+    │       └── demo.servers.txt
+    └── readlinetest.c
 mstream-docker
 ├── music ....................... [音乐文件只要放到此目录下即可被识别，支持多目录嵌套]
 ├── config ...................... [mStream 配置目录]
