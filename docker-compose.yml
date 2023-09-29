@@ -9,7 +9,7 @@ services:
     container_name: openkore
     hostname: openkore
     volumes:
-      - ./res/openkore:/app/custom/openkore
+      - ./volumes/openkore:/app/custom/openkore
       - ./volumes/openkore/control:/app/openkore/control
       - ./logs:/app/openkore/logs
     networks:
