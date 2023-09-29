@@ -5,7 +5,7 @@
 ------
 
 
-## 概要
+## 0x00 概要
 
 OpenKore 和传统的 RO Bot 不同，它是纯命令行交互、没有 UI 界面，而且支持多平台运行，这就为容器化提供了基础支持。
 
@@ -29,7 +29,7 @@ OpenKore 和传统的 RO Bot 不同，它是纯命令行交互、没有 UI 界�
 
 
 
-## 目录结构说明
+## 0x10 目录结构说明
 
 ```
 openkore-docker
@@ -60,22 +60,29 @@ openkore-docker
 └── README.md ....................... [说明文档]
 ```
 
-## 环境要求
+## 0x20 环境要求
 
 ![](https://img.shields.io/badge/Platform-Linux%20amd64-brightgreen.svg) ![](https://img.shields.io/badge/Platform-Mac%20amd64-brightgreen.svg) ![](https://img.shields.io/badge/Platform-Windows%20x64-brightgreen.svg)
 
 
-## 部署步骤
+## 0x30 部署步骤
 
-### 1. 项目构建
+### 0x31 项目构建
 
-- 宿主机安装 docker、docker-compose
-- 下载仓库： `git clone https://github.com/Casual-Ragnarok/openkore-docker`
-- 打开仓库目录： `cd openkore-docker`
-- 构建镜像： `./build.sh|ps1`
+1. 宿主机安装 docker、docker-compose
+2. 下载仓库： `git clone https://github.com/Casual-Ragnarok/openkore-docker`
+3. 打开仓库目录： `cd openkore-docker`
+4. 构建镜像： `./build.sh|ps1`
 
 
-### 设置服务器配置
+### 0x32 设置服务连接配置
+
+1. 复制 [`volumes/openkore/control/demo.config.txt`](./volumes/openkore/control/demo.config.txt) 到 `volumes/openkore/control/config.txt`
+2. 复制 [`volumes/openkore/tables/demo.servers.txt`](./volumes/openkore/tables/demo.servers.txt) 到 `volumes/openkore/tables/servers.txt`
+
+> `config.txt` 无需做任何改动，连接到服务器时会交通过互填写。之所以要手动复制这两份文件，是因为在 [`.gitignore`](./.gitignore) 中对它们做了忽略处理，避免提交敏感信息到 git 仓库
+
+3. 修改 `servers.txt` 文件，添加自己部署的 RO 服务器连接信息
 
 
 ### 终端运行
