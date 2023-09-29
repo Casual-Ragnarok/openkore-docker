@@ -1,5 +1,5 @@
 .env
-res/openkore
+# volumes/openkore
 
 logs/*
 *.log
