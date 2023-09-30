@@ -9,4 +9,3 @@
 
 docker-compose up -d
 docker ps
-echo "Docker is running: ${PROTOCOL}://${DOMAIN}:7080"

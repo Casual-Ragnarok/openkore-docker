@@ -77,49 +77,29 @@ openkore-docker
 
 ### 0x32 设置服务连接配置
 
-1. 复制 [`volumes/openkore/control/demo.config.txt`](./volumes/openkore/control/demo.config.txt) 到 `volumes/openkore/control/config.txt`
-2. 复制 [`volumes/openkore/tables/demo.servers.txt`](./volumes/openkore/tables/demo.servers.txt) 到 `volumes/openkore/tables/servers.txt`
+- 复制 [`volumes/openkore/tables/demo.servers.txt`](./volumes/openkore/tables/demo.servers.txt) 到 `volumes/openkore/tables/servers.txt`
+- 修改 `servers.txt` 文件，添加自己部署的 RO 服务器连接信息，其中最开始三个的 `z_YourRO - xxxxxx` 都是使用了最新的 kRO_RagexeRE_2021_11_03 封包，也是截至目前（2023-10-01）openkore 所能支持 rAthena 的最新版本，实测可以支持到 kRO 20220406。
+- 运行 openkore: `./run.sh|ps1`
 
-> `config.txt` 无需做任何改动，连接到服务器时会交通过互填写。之所以要手动复制这两份文件，是因为在 [`.gitignore`](./.gitignore) 中对它们做了忽略处理，避免提交敏感信息到 git 仓库
+> 之所以要复制这份文件，是因为其中包含了敏感信息，故在 [`.gitignore`](./.gitignore) 中对它们做了忽略处理，避免误操作提交到 git 仓库。详细的配置说明可参考[这里](./volumes/openkore/tables/README.md)。
 
-3. 修改 `servers.txt` 文件，添加自己部署的 RO 服务器连接信息
+### 0x33 连接到服务器
 
+- 复制 [`volumes/openkore/control/demo.config.txt`](./volumes/openkore/control/demo.config.txt) 到 `volumes/openkore/control/config.txt`，但是无需做任何改动，连接到服务器时会交通过互填写。
+- 连接到 RO 服务器: `./link.sh|ps1`，交互过程中需要填写:
+  - 选择上一步中配置好的服务器
+  - 输入已有的游戏帐号
+  - 输入对应的游戏密码
+  - 选择区域服务器
+  - 选择角色
+- 交互过程中会不断更新 `config.txt` 这个文件，这也是在 [`.gitignore`](./.gitignore) 中对它做忽略处理的原因，因为里面包含的帐密
+- 交互完成后就会根据 [`volumes/openkore/control`](./volumes/openkore/control) 预设的策略进行挂机
 
-### 终端运行
-
-
-
-
-多号运行：
-https://forums.openkore.com/viewtopic.php?t=15802
-https://ro.private-servers-game.com/forum.php?mod=viewthread&tid=904
-
-perl ./openkore.pl
-
-
-# peek 中获取的密钥按以下顺序使用：
-# sendCryptKeys 1, 3, 2
-# https://openkore.com/wiki/Connectivity_Guide
-# https://forums.openkore.com/viewtopic.php?t=212793
+> control 的行为策略可以自己按需修改，修改后需要重新连接。详细的配置说明可以参考[这里](./volumes/openkore/control/README.md)
 
 
-https://ragnabotko.blogspot.com/2011/09/how-to-run-openkore-to-your-ubuntu.html
-https://openkore.com/wiki/How_to_run_OpenKore
+## 0x34 断开连接
 
+- 断开连接可以在命令行输入 `Ctrl+C` 或 `Command+C`
+- 若需完全停止 openkore ，可执行 `./stop.sh|ps1`
 
-
-https://openkore.com/wiki/Main_Page
-https://openkore.com/wiki/Connectivity_Guide
-https://forums.openkore.com/viewtopic.php?t=212793
-
-
-
-https://openkore.com/wiki/Packet_Length_Extractor
-https://misc.openkore.com/
-
-
-perl ./openkore.pl --control="/app/accounts/A0000/"
-perl ./openkore.pl --config="/app/accounts/A0001/config.txt"
-
-
-git remote set-url git@ro.github.com:Casual-Ragnarok/openkore-docker.git
