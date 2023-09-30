@@ -98,7 +98,7 @@ openkore-docker
 > control 的行为策略可以自己按需修改，修改后需要重新连接。详细的配置说明可以参考[这里](./volumes/openkore/control/README.md)
 
 
-## 0x34 断开连接
+### 0x34 断开连接
 
 - 断开连接可以在命令行输入 `Ctrl+C` 或 `Command+C`
 - 若需完全停止 openkore ，可执行 `./stop.sh|ps1`
