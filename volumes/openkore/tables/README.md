@@ -78,7 +78,7 @@ private 1
 # sendCryptKeys ${PACKET_OBFUSCATION_KEY1},{PACKET_OBFUSCATION_KEY3},{PACKET_OBFUSCATION_KEY2}
 ```
 
-## 0x10 必填参数
+## 0x10 必填选项
 
 ### 0x11 server name
 
@@ -197,7 +197,7 @@ kRO_RagexeRE_<year>_<month>_<date><letter>
 
 ### 0x18 addTableFolders
 
-当 openkore 的启动命令行没有声明 `--tables` 参数时，使用这个参数做默认配置。
+当 openkore 的启动命令行没有声明 `--tables` 参数时，使用这个选项的值做默认配置。
 
 对于 rAthena 搭建的服务器，一般配置为 `addTableFolders kRO/Ragexe_2021_11_03;iRO`
 
@@ -208,11 +208,11 @@ kRO_RagexeRE_<year>_<month>_<date><letter>
 > 为了使这些设置生效，这些文件夹必须存在于 openkore 的 `tables` 目录下。但是由于 docker 没有暴露这些文件夹到主机，所以 volumes 目录下看不到，可以通过 `bin/terminal.sh|ps1` 进入容器找到这些目录。
 
 
-## 0x20 可选参数
+## 0x20 可选选项
 
 ### 0x21 private
 
-如果 openkore 连接到地图服务器报错，则可以启用这个参数。
+如果 openkore 连接到地图服务器报错，则可以启用这个选项。
 
 rAthena 搭建的私服一般设置为 `1`。
 
@@ -228,7 +228,7 @@ rAthena 搭建的私服一般设置为 `1`。
 
 例如有 1 条聊天消息为： `Hello, xxx|01`， 最后的 `|01` 就是语言代码。
 
-但是 openkore 并没有给出语言代码的枚举表，所以实际上这个参数没有意义。
+但是 openkore 并没有给出语言代码的枚举表，所以实际上这个选项没有意义。
 
 
 
@@ -243,7 +243,7 @@ rAthena 搭建的私服一般设置为 `1`。
 
 ### 0x25 field_`<location>`
 
-这个参数用于设置地图别名，例如： `field_morocc morocc-old`
+这个选项用于设置地图别名，例如： `field_morocc morocc-old`
 
 如果你的服务器使用过时或修改过的地图数据，它将非常有用。
 
@@ -257,40 +257,95 @@ rAthena 搭建的私服一般设置为 `1`。
 
 此时 openkore 可以通过设置 clientHash 伪造指纹，绕过这个识别机制。
 
-但是对于同时使用 rAthena 搭建、又自己通过 openkore 的做机器人的服主，建议在 rAthena 开启 client_hash_check 的同时，设置 client_hash 的 group_id 策略，如上图例子：
+但是对于同时使用 rAthena 搭建、又通过 openkore 的做机器人的服主，建议在 rAthena 开启 client_hash_check 的同时，设置 client_hash 的 group_id 策略，如上图例子：
 
 - 对于 `group_id = 0, 1` 的正常玩家做 clientHash 指纹校验
 - 对于 `group_id = 97` 的机器人玩家不做校验
 - 对于 `group_id = 98, 99` 的 GM 不做校验
 
-这样就可以区分 openkore 机器人和正常玩家进行统一管理。
+这样 openkore 就不需要设置 clientHash，而且还能区分机器人和正常玩家、进行统一管理。
 
 
+### 0x27 captcha
+
+验证码的应用场景可以参考[官方例子](https://openkore.com/wiki/captcha)。
+
+当开启这个选项时，挂机过程中一旦 openkore 被反外挂程序识别出来并要求填写验证码时：
+
+- 验证码的图片会自动下载到**日志目录** [`logs`](../../../logs)
+- 人工查阅验证码图片
+- 在 openkore 的控制台手动输入验证码
+
+### 0x28 gameGuard
+
+服务器是否启用了反外挂。
+
+此选项在配置 [Poseidon](https://openkore.com/wiki/Poseidon) 代理时才有用，一般情况下，rAthena 搭建的服务器、其客户端在 [DIFF](https://exp-blog.com/game/ro/cong-ling-kai-shi-diff-ragnarok-deng-ru-qi-jiao-cheng/) 的时候都会去掉反外挂，因此固定配置 `gameGuard 0` 即可。
 
 
-captcha <boolean>
+### 0x29 secureLogin
 
-gameGuard <number>
+关于 [`secureLogin**`](https://openkore.com/wiki/secureLogin) 官方已有[详细解释](https://openkore.com/wiki/secureLogin)，这四个选项一般只有在连接官服的时候才有用，rAthena 搭建的服务器用不到。
 
-secureLogin <boolean>
-secureLogin_type <type>
-secureLogin_requestCode <hex string>
-secureLogin_account <boolean>
+就效果来说，这四个选项是为了让 OpenKore 能够以加密的方式进行保护账户信息的登录过程，这里大概说明一下：
 
-preLoginCode <boolean>
+1. secureLogin: 这个选项定义了登录时所使用的数据包类型。具体值和对应的数据包包含：
+    - 0：不使用安全登录模式，登录时使用 `0064` 标识的 master_login 登录行为
+    - 1：登录时使用 `01DD` 标识的 master_login 登录行为
+    - 3：登录时使用 `01FA` 标识的 master_login 登录行为
 
-paddedPackets <boolean>
-paddedPackets_attackID <packet switches>
-paddedPackets_skillUseID <packet switches>
+在 RO 中，每当有一项操作需要在服务器和客户端之间进行交互（如登录游戏，移动角色等），都会有一个特定的数据包被发送，这些标识符决定了数据包的功能和它们的格式结构。因此这里不管是 `01DD` 还是 `01FA`，都是 RO 服务端和客户端之间加密通信的标识符，区别只是两者的预设值不同、决定了后续发送数据包的类型和内容也不同。
 
-masterLogin_packet <packet switch>
+2. secureLogin_type: 当 `secureLogin = 1 or 3` 时，选择发送数据包的内容：
+    - 0：不使用标准类型的数据包
+    - 1：标准数据包 `04 02 7B 8A A8 90 2F D8 E8 30 F8 A5 25 7A 0D 3B CE 52`
+    - 2：标准数据包 `04 02 27 6A 2C CE AF 88 01 87 CB B1 FC D5 90 C4 ED D2`
+    - 3：标准数据包 `04 02 42 00 B0 CA 10 49 3D 89 49 42 82 57 B1 68 5B 85`
+    - 4：标准数据包 `04 02 22 37 D7 FC 8E 9B 05 79 60 AE 02 33 6D 0D 82 C6`
+    - 5：标准数据包 `04 02 C7 0A 94 C2 7A CC 38 9A 47 F5 54 39 7C A4 D0 39`
+3. secureLogin_requestCode: 当需要自定义数据包内容时，则令 `secureLogin_type = 0`，然后在 secureLogin_requestCode 指定任何值即可（必须是以空格分隔的十六进制代码序列）
+4. secureLogin_account: 当且仅当 `secureLogin = 3` 时才有用，但是官方没有提有什么用。
 
-OTP_ip <IP_or_hosthame>
-OTP_port <number>
 
-dead <boolean>
-dead_message <any text>
-title <any text>
+### 0x2A preLoginCode
+
+如果你的服务在 master_login 登录前发送了一个数据包，此选项应该设置为 `1`。 但是目前没有任何地方用到这个选项。
+
+> master_login 就是指客户端输入帐密登录的那个界面的登录行为
+
+
+### 0x2B masterLogin_packet
+
+覆盖 master_login 数据包（但不改变其结构）。
+
+如果与 `0064` 标识不同，则需要使用 [XKore](https://openkore.com/wiki/XKore) 模式 2 的部署架构。
+
+
+### 0x2C paddedPackets
+
+官方没有关于 paddedPackets、paddedPackets_attackID 和 paddedPackets_skillUseID 的选项说明。
+
+
+### 0x2D OTP_ip 和 OTP_port
+
+含有一次性登录密码的登录服务 IP 和 端口。
+
+
+### 0x2E dead 和 dead_message
+
+如果 `dead = 1`，表示该服务器已经停止服务，使用 openkore 连接时不会出现在服务器清单中。
+
+如果存在 config.txt 引用了这种服务器，则会抛出 `dead_message` 定义的异常信息。
+
+
+### 0x2F title
+
+单纯改变 `[<server name>]` 在列表中显示的名称，但是 config.txt 记录的名称依然是 `[<server name>]` 设定的名称，列表排序还是按照 `[<server name>]` 的字典序。
+
+是当想修改服务器名称又不想令已有配置异常时，这个选项很有用。
+
+
+### 0x2G pinCode
 
 pinCode <boolean>
 charDeleteDateType <boolean>
