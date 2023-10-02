@@ -210,19 +210,34 @@ kRO_RagexeRE_<year>_<month>_<date><letter>
 
 ## 0x20 可选选项
 
-### 0x21 private
+### 0x21 sendCryptKeys
+
+官方没有针对这个配置做说明，是一个隐藏选项。
+
+当服务端采用[封包加密](https://exp-blog.com/game/ro/cong-ling-kai-shi-diff-ragnarok-deng-ru-qi-jiao-cheng)通信时，服务端或者客户端都会依次设置 3 个密钥，例如: `0a19cadf`, `393a136d`, `270c507c`：
+
+![](../../../imgs/15.png)
+
+此时 openkore 需要设置 sendCryptKeys 才能连接到服务端，而[密钥顺序](https://forums.openkore.com/viewtopic.php?t=212793)需要配置为 `1, 3, 2`，例如这个例子：
+
+```
+sendCryptKeys 0a19cadf, 270c507c, 393a136d
+```
+
+
+### 0x22 private
 
 如果 openkore 连接到地图服务器报错，则可以启用这个选项。
 
 rAthena 搭建的私服一般设置为 `1`。
 
 
-### 0x22 recvpackets
+### 0x23 recvpackets
 
 指定 recvpackets.txt 的文件名，非必要不修改，使用默认就好。
 
 
-### 0x23 chatLangCode
+### 0x24 chatLangCode
 
 启用聊天消息中的语言代码支持（一个管道和两个十六进制数字），一般不设置。
 
@@ -232,7 +247,7 @@ rAthena 搭建的私服一般设置为 `1`。
 
 
 
-### 0x24 storageEncryptKey
+### 0x25 storageEncryptKey
 
 指定服务器的存储加密密钥，用于加解密数据包。
 
@@ -241,7 +256,7 @@ rAthena 搭建的私服一般设置为 `1`。
 在将来可能会发生变化，但是目前固定值为 `0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9`。
 
 
-### 0x25 field_`<location>`
+### 0x26 field_`<location>`
 
 这个选项用于设置地图别名，例如： `field_morocc morocc-old`
 
@@ -249,7 +264,7 @@ rAthena 搭建的私服一般设置为 `1`。
 
 
 
-### 0x26 clientHash
+### 0x27 clientHash
 
 在 rAthena 的服务端 login_athena.conf 配置中，可以通过启用 client_hash_check 验证客户端 exe 文件的 MD5 指纹避免恶意玩家篡改登陆器登录：
 
@@ -266,7 +281,7 @@ rAthena 搭建的私服一般设置为 `1`。
 这样 openkore 就不需要设置 clientHash，而且还能区分机器人和正常玩家、进行统一管理。
 
 
-### 0x27 captcha
+### 0x28 captcha
 
 验证码的应用场景可以参考[官方例子](https://openkore.com/wiki/captcha)。
 
@@ -276,14 +291,15 @@ rAthena 搭建的私服一般设置为 `1`。
 - 人工查阅验证码图片
 - 在 openkore 的控制台手动输入验证码
 
-### 0x28 gameGuard
+
+### 0x29 gameGuard
 
 服务器是否启用了反外挂。
 
 此选项在配置 [Poseidon](https://openkore.com/wiki/Poseidon) 代理时才有用，一般情况下，rAthena 搭建的服务器、其客户端在 [DIFF](https://exp-blog.com/game/ro/cong-ling-kai-shi-diff-ragnarok-deng-ru-qi-jiao-cheng/) 的时候都会去掉反外挂，因此固定配置 `gameGuard 0` 即可。
 
 
-### 0x29 secureLogin
+### 0x2A secureLogin
 
 关于 [`secureLogin**`](https://openkore.com/wiki/secureLogin) 官方已有[详细解释](https://openkore.com/wiki/secureLogin)，这四个选项一般只有在连接官服的时候才有用，rAthena 搭建的服务器用不到。
 
@@ -307,71 +323,92 @@ rAthena 搭建的私服一般设置为 `1`。
 4. secureLogin_account: 当且仅当 `secureLogin = 3` 时才有用，但是官方没有提有什么用。
 
 
-### 0x2A preLoginCode
+### 0x2B preLoginCode
 
 如果你的服务在 master_login 登录前发送了一个数据包，此选项应该设置为 `1`。 但是目前没有任何地方用到这个选项。
 
 > master_login 就是指客户端输入帐密登录的那个界面的登录行为
 
 
-### 0x2B masterLogin_packet
+### 0x2C masterLogin_packet
 
 覆盖 master_login 数据包（但不改变其结构）。
 
-如果与 `0064` 标识不同，则需要使用 [XKore](https://openkore.com/wiki/XKore) 模式 2 的部署架构。
+如果与 `0064` 标识不同，则需要使用 [XKore](https://openkore.com/wiki/XKore) 模式 2（hook）的部署架构。
 
 
-### 0x2C paddedPackets
+### 0x2D paddedPackets
 
 官方没有关于 paddedPackets、paddedPackets_attackID 和 paddedPackets_skillUseID 的选项说明。
 
 
-### 0x2D OTP_ip 和 OTP_port
+### 0x2E OTP_ip 和 OTP_port
 
 含有一次性登录密码的登录服务 IP 和 端口。
 
 
-### 0x2E dead 和 dead_message
+### 0x2F dead 和 dead_message
 
 如果 `dead = 1`，表示该服务器已经停止服务，使用 openkore 连接时不会出现在服务器清单中。
 
 如果存在 config.txt 引用了这种服务器，则会抛出 `dead_message` 定义的异常信息。
 
 
-### 0x2F title
+### 0x2G title
 
 单纯改变 `[<server name>]` 在列表中显示的名称，但是 config.txt 记录的名称依然是 `[<server name>]` 设定的名称，列表排序还是按照 `[<server name>]` 的字典序。
 
 是当想修改服务器名称又不想令已有配置异常时，这个选项很有用。
 
 
-### 0x2G pinCode
+### 0x2H pinCode
 
-pinCode <boolean>
-charDeleteDateType <boolean>
-blockingPlayerCancel <boolean>
-rankingSystemType <boolean>
-itemListType <boolean>
-ignoreAntiCheatWarning <boolean>
+当 RO 服务器需要使用 PIN 码登录时，此选项需要设置为 `1`。
 
-# peek 中获取的密钥按以下顺序使用：
-# sendCryptKeys 1, 3, 2
-# https://openkore.com/wiki/Connectivity_Guide
-# https://forums.openkore.com/viewtopic.php?t=212793
+
+### 0x2I charDeleteDateType
+
+当 RO 服务器需要使用当前日期和时间来删除人物角色时，此选项需要设置为 `1`。
+
+
+
+### 0x2J blockingPlayerCancel
+
+当 RO 服务器需要客户端发送 blocking_player_cancel （`0447` 标识的数据包）时，此选项需要设置为 `1`。
+
+> 仅在 [XKore](https://openkore.com/wiki/XKore) 部署架构为模式 1 时无效
+
+![](../../../imgs/16.png)
+
+
+### 0x2K rankingSystemType
+
+当 RO 服务器使用 rank_general（通用排名），而非 rank_killer（刺客排名）、rank_taekwon（跆拳道排名）、rank_alchemist（炼金术士排名）、rank_blacksmith（铁匠排名）时，此选项需要设置为 `1`。
+
+
+### 0x2L itemListType
+
+如果 RO 服务器使用 `0B08 ~ 0B0B` 的 item_list 数据包、而非使用了常规的 item 数据包，此选项需要设置为 `1`。
+
+一个判断方法是，如果使用了非常规的 item 数据包，会报错 `Unknown switch: xxxx`（`xxxx` 为 `0B08 ~ 0B0B` 之间的任何多个值），而且无法使用背包和仓库道具，详见[这个例子](https://github.com/OpenKore/openkore/issues/2998)。
+
+
+### 0x2M itemListUseOldType
+
+
+### 0x2N ignoreAntiCheatWarning
+
+
+
+
 
 
 https://ragnabotko.blogspot.com/2011/09/how-to-run-openkore-to-your-ubuntu.html
 https://openkore.com/wiki/How_to_run_OpenKore
 
 
-
 https://openkore.com/wiki/Main_Page
-https://openkore.com/wiki/Connectivity_Guide
-https://forums.openkore.com/viewtopic.php?t=212793
 
-
-
-https://openkore.com/wiki/Packet_Length_Extractor
 https://misc.openkore.com/
 
 
