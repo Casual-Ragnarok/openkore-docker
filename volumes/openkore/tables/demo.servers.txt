@@ -17,7 +17,7 @@ version 28
 serverType kRO_RagexeRE_2021_11_03
 serverEncoding GBK
 gameGuard 0
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 addTableFolders kRO/Ragexe_2021_11_03;iRO
 charBlockSize 175
 pinCode 0
@@ -35,7 +35,7 @@ version 28
 serverType kRO_RagexeRE_2021_11_03
 serverEncoding GBK
 gameGuard 0
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 addTableFolders kRO/Ragexe_2021_11_03;iRO
 charBlockSize 175
 pinCode 0
@@ -53,7 +53,7 @@ version 28
 serverType kRO_RagexeRE_2021_11_03
 serverEncoding GBK
 gameGuard 0
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 addTableFolders kRO/Ragexe_2021_11_03;iRO
 charBlockSize 175
 pinCode 0
@@ -71,7 +71,7 @@ version 28
 serverType kRO_RagexeRE_2018_04_18a
 serverEncoding Western
 gameGuard 0
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 addTableFolders kRO/RagexeRE_2018_04_04b;iRO
 charBlockSize 155
 pinCode 0
@@ -87,7 +87,7 @@ version 28
 serverType kRO_RagexeRE_2020_04_01b
 serverEncoding Western
 gameGuard 0
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 addTableFolders kRO/RagexeRE_2020_04_01b;iRO
 charBlockSize 155
 pinCode 0
@@ -103,7 +103,7 @@ version 28
 serverType kRO_RagexeRE_2021_11_03
 serverEncoding GBK
 gameGuard 0
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 addTableFolders kRO/Ragexe_2021_11_03;iRO
 charBlockSize 175
 pinCode 0
@@ -141,7 +141,7 @@ secureLogin_type 0
 secureLogin_requestCode
 secureLogin_account 0
 serverEncoding Western
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 addTableFolders bRO
 charBlockSize 147
 pinCode 1
@@ -163,7 +163,7 @@ secureLogin_type 0
 secureLogin_requestCode
 secureLogin_account 0
 serverEncoding Western
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 addTableFolders bRO
 charBlockSize 147
 pinCode 1
@@ -184,7 +184,7 @@ serverEncoding GBK
 charBlockSize 155
 addTableFolders cRO
 gameGuard 1
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 pinCode 1
 charDeleteDateType 1
 blockingPlayerCancel 1
@@ -256,7 +256,7 @@ serverType jRO
 serverEncoding Japanese
 addTableFolders jRO
 charBlockSize 155
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 
 # http://roz.gnjoy.com/
 [Korea - kRO: Zero]
@@ -276,7 +276,7 @@ charBlockSize 155
 gameGuard 1
 addTableFolders kRO/Zero;kRO
 pinCode 1
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 sendCryptKeys 0x2FC330DD, 0x4D914DE2, 0x01C04E1F
 blockingPlayerCancel 1
 
@@ -289,7 +289,7 @@ version 19
 serverType kRO_RagexeRE_0
 serverEncoding Korean
 charBlockSize 112
-storageEncryptKey 0x050B6F79,0x0202C179,0x00E20120,0x04FA43E3,0x0179B6C8,0x05973DF2,0x007D8D6B,0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 gameGuard 1
 addTableFolders kRO
 
@@ -307,7 +307,7 @@ serverType Sakray
 serverEncoding Korean
 charBlockSize 155
 addTableFolders kRO/Sakray;kRO
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 pinCode 1
 gameGuard 0
 
@@ -321,7 +321,7 @@ serverType rRO
 serverEncoding Russian
 addTableFolders rRO
 charBlockSize 145
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x0E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 blockingPlayerCancel 1
 
 # https://ro.gnjoy.com.tw/
@@ -334,7 +334,7 @@ serverType twRO
 serverEncoding Big5
 addTableFolders twRO
 charBlockSize 175
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 charDeleteDateType 1
 blockingPlayerCancel 1
 rankingSystemType 1
@@ -372,7 +372,7 @@ charBlockSize 155
 pinCode 1
 gameGuard 1
 blockingPlayerCancel 1
-storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x07D8D6B, 0x08CB9ED9
+storageEncryptKey 0x050B6F79, 0x0202C179, 0x00E20120, 0x04FA43E3, 0x0179B6C8, 0x05973DF2, 0x007D8D6B, 0x08CB9ED9
 itemListType 1
 
 
