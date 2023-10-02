@@ -390,26 +390,16 @@ rAthena 搭建的私服一般设置为 `1`。
 
 如果 RO 服务器使用 `0B08 ~ 0B0B` 的 item_list 数据包、而非使用了常规的 item 数据包，此选项需要设置为 `1`。
 
-一个判断方法是，如果使用了非常规的 item 数据包，会报错 `Unknown switch: xxxx`（`xxxx` 为 `0B08 ~ 0B0B` 之间的任何多个值），而且无法使用背包和仓库道具，详见[这个例子](https://github.com/OpenKore/openkore/issues/2998)。
+一个判断方法是，如果使用了非常规的 item 数据包，会报错 `Unknown switch: xxxx`（`xxxx` 为 `0B08 ~ 0B0B` 之间的任何多个值），而且无法使用背包和仓库道具，详见[这个 issue](https://github.com/OpenKore/openkore/issues/2998)。
 
 
 ### 0x2M itemListUseOldType
 
+在 item_list 中支持历史版本的道具类型，相关 [issue](https://github.com/OpenKore/openkore/pull/3700)
+
 
 ### 0x2N ignoreAntiCheatWarning
 
+如果启用此选项，则禁用所有反作弊警告。
 
-
-
-
-
-https://ragnabotko.blogspot.com/2011/09/how-to-run-openkore-to-your-ubuntu.html
-https://openkore.com/wiki/How_to_run_OpenKore
-
-
-https://openkore.com/wiki/Main_Page
-
-https://misc.openkore.com/
-
-
-
+当前仅适用于 EAC(Easy Anti-Cheat) 反作弊系统。

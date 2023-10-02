@@ -13,10 +13,6 @@ OpenKore 和传统的 RO Bot 不同，它是纯命令行交互、没有 UI 界�
 
 而容器化就是目前最好的解决方案。
 
-- 官方 [源码](https://github.com/OpenKore/openkore)
-- 官方 [wiki](https://openkore.com/wiki/Main_Page) 
-- 官方 [论坛](https://forums.openkore.com/)
-
 [![Openkore - AIBot 实机演示](./imgs/01.jpg)](https://www.bilibili.com/video/BV14w411Y78k)
 
 <details>
@@ -102,4 +98,14 @@ openkore-docker
 
 - 断开连接可以在命令行输入 `Ctrl+C` 或 `Command+C`
 - 若需完全停止 openkore ，可执行 `./stop.sh|ps1`
+
+
+## 0xFF 参考资料
+
+- 官方 [源码](https://github.com/OpenKore/openkore)
+- 官方 [wiki](https://openkore.com/wiki/Main_Page) 
+- 官方 [论坛](https://forums.openkore.com/)
+- 《[How to run OpenKore](https://openkore.com/wiki/How_to_run_OpenKore)》
+- 《[OpenKore 基础教程](https://1991.run/138.html)》
+- 《[OpenKore 错误码表](https://openkore.com/wiki/packets)》
 
