@@ -1,7 +1,6 @@
 # --------------------------------------------
-# 自动挂店（需要消耗道具 开设商店执照 ？）
+# 自动挂店（露天商店，仅商人/超初可用）
 # https://openkore.com/wiki/shop.txt
-# buyer_shop、shop 的区别 ？
 # --------------------------------------------
 
 # This file controls which items to put into your shop, when you are

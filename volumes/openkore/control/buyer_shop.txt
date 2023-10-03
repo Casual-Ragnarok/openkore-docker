@@ -1,7 +1,9 @@
 # --------------------------------------------
-# 自动挂店（仅商人职业有用）
+# 自动挂店（采购商店）：
+#   - 商人职业需要学习「开设采购商店」技能并且拥有「采购商店执照」
+#   - 非商人职业需要拥有「简易采购商店执照」
 # https://openkore.com/wiki/buyer_shop.txt
-# buyer_shop、shop 的区别 ？
+# https://irowiki.org/wiki/Buying_Store
 # --------------------------------------------
 
 # This file controls which items to put into your buyer shop. 

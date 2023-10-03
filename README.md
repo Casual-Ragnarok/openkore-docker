@@ -91,7 +91,15 @@ openkore-docker
 - 交互过程中会不断更新 `config.txt` 这个文件，这也是在 [`.gitignore`](./.gitignore) 中对它做忽略处理的原因，因为里面包含的帐密
 - 交互完成后就会根据 [`volumes/openkore/control`](./volumes/openkore/control) 预设的行为策略进行挂机
 
-> control 的行为策略可以自己按需修改，修改后需要重新连接。详细的配置说明可以参考[这里](./volumes/openkore/control/README.md)
+![](imgs/03.jpg)
+
+![](imgs/04.jpg)
+
+![](imgs/05.jpg)
+
+![](imgs/06.jpg)
+
+> control 目录下的行为策略配置文件可以自己按需修改，修改后需要重新连接。详细的配置说明可以参考[这里](./volumes/openkore/control/README.md)
 
 
 ### 0x34 断开连接

@@ -1,7 +1,6 @@
 # --------------------------------------------
 # 自动聊天（此处可以接入 ChatGPT）
 # https://openkore.com/wiki/chat_resp.txt
-# chat_resp、overallAuth、responses 可以结合使用 ？
 # --------------------------------------------
 
 # Kore can reply with a message when someone talks to you. In this file,

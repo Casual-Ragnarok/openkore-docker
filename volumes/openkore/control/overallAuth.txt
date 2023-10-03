@@ -1,7 +1,6 @@
 # --------------------------------------------
 # 授权 bot 是否允许在 openKore 的控制台里面聊天
 # https://openkore.com/wiki/overallAuth.txt
-# chat_resp、overallAuth、responses 可以结合使用 ？
 # --------------------------------------------
 
 # The format of this file is simply a set of lines that observes the following syntax:
