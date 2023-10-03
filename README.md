@@ -84,20 +84,25 @@ openkore-docker
 - 复制 [`volumes/openkore/control/demo.config.txt`](./volumes/openkore/control/demo.config.txt) 到 `volumes/openkore/control/config.txt`，但是无需做任何改动，连接到服务器时会交通过互填写。
 - 连接到 RO 服务器: `./link.sh|ps1`，交互过程中需要填写:
   - 选择上一步中配置好的服务器
-  - 输入已有的游戏帐号
-  - 输入对应的游戏密码
-  - 选择区域服务器
-  - 选择角色
-- 交互过程中会不断更新 `config.txt` 这个文件，这也是在 [`.gitignore`](./.gitignore) 中对它做忽略处理的原因，因为里面包含的帐密
-- 交互完成后就会根据 [`volumes/openkore/control`](./volumes/openkore/control) 预设的行为策略进行挂机
 
 ![](imgs/03.jpg)
 
+  - 输入已有的游戏帐号
+  - 输入对应的游戏密码
+
 ![](imgs/04.jpg)
+
+  - 选择区域服务器
 
 ![](imgs/05.jpg)
 
+  - 选择角色
+
 ![](imgs/06.jpg)
+
+- 交互过程中会不断更新 `config.txt` 这个文件，这也是在 [`.gitignore`](./.gitignore) 中对它做忽略处理的原因，因为里面包含的帐密
+- 交互完成后就会根据 [`volumes/openkore/control`](./volumes/openkore/control) 预设的行为策略进行挂机
+
 
 > control 目录下的行为策略配置文件可以自己按需修改，修改后需要重新连接。详细的配置说明可以参考[这里](./volumes/openkore/control/README.md)
 
