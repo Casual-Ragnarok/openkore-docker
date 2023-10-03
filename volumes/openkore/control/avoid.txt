@@ -1,3 +1,8 @@
+# --------------------------------------------
+# 自动避开特定玩家
+# https://openkore.com/wiki/avoid.txt
+# --------------------------------------------
+
 # avoid.txt: Avoid certain players
 # WARNING: The commented players and IDs here are for iRO GMs/bot-hunters and are probably outdated.
 

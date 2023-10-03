@@ -1,3 +1,9 @@
+# --------------------------------------------
+# 自动挂店（需要消耗道具 开设商店执照 ？）
+# https://openkore.com/wiki/shop.txt
+# buyer_shop、shop 的区别 ？
+# --------------------------------------------
+
 # This file controls which items to put into your shop, when you are
 # vending. To enable vending, set the 'shopAuto' configuration option in
 # config.txt to 1.

@@ -1,3 +1,8 @@
+# --------------------------------------------
+# 主配置文件
+# https://openkore.com/wiki/Category:config.txt
+# --------------------------------------------
+
 # Please Read the Users Manual
 # The Manual is located at https://openkore.com/wiki/Manual
 

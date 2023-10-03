@@ -1,3 +1,8 @@
+# --------------------------------------------
+# 道具使用策略控制
+# https://openkore.com/wiki/items_control.txt
+# --------------------------------------------
+
 # In this file you can control which items to put in storage,
 # to sell, or to leave in the inventory.
 #

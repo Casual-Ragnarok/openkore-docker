@@ -1,3 +1,9 @@
+# --------------------------------------------
+# 自动挂店（仅商人职业有用）
+# https://openkore.com/wiki/buyer_shop.txt
+# buyer_shop、shop 的区别 ？
+# --------------------------------------------
+
 # This file controls which items to put into your buyer shop. 
 # To enable Buyer Shop, set the 'buyerShopAuto' configuration option in
 # config.txt to 1.

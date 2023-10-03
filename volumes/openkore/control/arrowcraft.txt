@@ -1,3 +1,8 @@
+# --------------------------------------------
+# 自动制作箭（仅弓箭手职业有用）
+# https://openkore.com/wiki/arrowcraft.txt
+# --------------------------------------------
+
 # Archers have the special skill Arrow Craft, which allows you to create
 # arrows using certain items.
 # If you want Kore to automatically create arrows with Arrow Craft, then

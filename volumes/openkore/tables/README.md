@@ -1,4 +1,4 @@
-# 服务器连接配置
+# 服务器参数配置
 
 ------
 
@@ -395,7 +395,7 @@ rAthena 搭建的私服一般设置为 `1`。
 
 ### 0x2M itemListUseOldType
 
-在 item_list 中支持历史版本的道具类型，相关 [issue](https://github.com/OpenKore/openkore/pull/3700)
+在 item_list 中支持历史版本的道具类型，可见相关 [issue](https://github.com/OpenKore/openkore/pull/3700)。
 
 
 ### 0x2N ignoreAntiCheatWarning

@@ -1,3 +1,8 @@
+# --------------------------------------------
+# 当被复数魔物攻击时、击杀它们的优先级
+# https://openkore.com/wiki/priority.txt
+# --------------------------------------------
+
 # Put the names of the monsters that have a high priority in this file.
 # (This list is case-insensitive.)
 # Upper entries have more priority than lower entries.

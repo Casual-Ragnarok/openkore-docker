@@ -1,3 +1,9 @@
+# --------------------------------------------
+# 海神服务器（可以在 RO 服务端和客户端之间搭建的一个 代理服务器，用于截获游戏数据）
+# https://openkore.com/wiki/Poseidon
+# https://github.com/Casual-Ragnarok/poseidon
+# --------------------------------------------
+
 # Ragnarok Server
 # Here you'll define the IP Address and the Port where Poseidon
 # will keep waiting for your ragnarok online client to connect.

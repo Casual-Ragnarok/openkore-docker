@@ -1,3 +1,8 @@
+# --------------------------------------------
+# 超时配置文件（控制行为间隔，使得 bot 看起来更像真人）
+# https://openkore.com/wiki/timeouts.txt
+# --------------------------------------------
+
 # You shouldn't need to modify these variables
 # If you want to really mess up the bot, go ahead :)
 #
