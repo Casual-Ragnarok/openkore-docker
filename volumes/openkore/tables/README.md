@@ -376,7 +376,7 @@ rAthena 搭建的私服一般设置为 `1`。
 
 当 RO 服务器需要客户端发送 blocking_player_cancel （`0447` 标识的数据包）时，此选项需要设置为 `1`。
 
-> 仅在 [XKore](https://openkore.com/wiki/XKore) 部署架构为模式 1 时无效
+> 当且仅当 [XKore](https://openkore.com/wiki/XKore) 部署架构为模式 1 时无效
 
 ![](../../../imgs/16.png)
 
