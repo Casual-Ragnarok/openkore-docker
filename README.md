@@ -77,7 +77,7 @@ openkore-docker
 - 修改 `servers.txt` 文件，添加自己部署的 RO 服务器参数信息，其中最开始三个的 `z_YourRO - xxxxxx` 都是使用了最新的 kRO_RagexeRE_2021_11_03 封包，也是截至目前（2023-10-01）openkore 所能支持 rAthena 的最新版本，实测可以支持到 kRO 20220406。
 - 运行 openkore: `./run.sh|ps1`
 
-> 之所以要复制这份文件，是因为其中包含了敏感信息，故在 [`.gitignore`](./.gitignore) 中对它们做了忽略处理，避免误操作提交到 git 仓库。详细的配置说明可参考[这里](./volumes/openkore/tables/README.md)。
+> 之所以要复制这份文件，是因为其中包含了敏感信息，故在 [`.gitignore`](./.gitignore) 中对它们做了忽略处理，避免误操作提交到 git 仓库。详细的配置说明可参考[这里](https://github.com/Casual-Ragnarok/openkore-docker/blob/master/volumes/openkore/tables/README.md)
 
 ### 0x33 连接到服务器
 
@@ -95,7 +95,7 @@ openkore-docker
 - 交互完成后就会根据 [`volumes/openkore/control`](./volumes/openkore/control) 预设的行为策略进行挂机
 
 
-> control 目录下的行为策略配置文件可以自己按需修改，修改后需要重新连接。详细的配置说明可以参考[这里](./volumes/openkore/control/README.md)
+> control 目录下的行为策略配置文件可以自己按需修改，修改后需要重新连接。详细的配置说明可以参考[这里](https://github.com/Casual-Ragnarok/openkore-docker/blob/master/volumes/openkore/control/README.md)
 
 
 ### 0x34 断开连接
