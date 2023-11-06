@@ -5,7 +5,7 @@
 
 | 分类 | 配置文件 | 官方文档 | 说明 |
 |:---|:---|:---:|:---|
-| 核心配置 | [config.txt](config./.txt) | [wiki](https://openkore.com/wiki/Category:config.txt) | 主配置文件，是 Bot 登录 RO 服务器的主配置文件，<br/>连接信息主要在第一次登录时通过交互方式配置。 |
+| 核心配置 | [config.txt](config.txt) | [wiki](https://openkore.com/wiki/Category:config.txt) | 主配置文件，是 Bot 登录 RO 服务器的主配置文件，<br/>连接信息主要在第一次登录时通过交互方式配置。 |
 |  | [sys.txt](./sys.txt) | [wiki](https://openkore.com/wiki/Category:sys.txt) | 系统配置文件，是系统参数的配置文件，<br/>例如语言、插件、总线等等的配置。 |
 | 一般行为配置 | [items_control.txt](./items_control.txt) | [wiki](https://openkore.com/wiki/items_control.txt) | 道具使用策略 |
 |  | [mon_control.txt](./mon_control.txt) | [wiki](https://openkore.com/wiki/mon_control.txt) | 对抗魔物策略 |
