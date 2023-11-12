@@ -177,7 +177,7 @@ kRO_RagexeRE_<year>_<month>_<date><letter>
 
 ### 0x16 serverEncoding
 
-服务端使用的编码，编码列表可以在[这里]选择。如果发现连接后乱码，需要变更编码配置。
+服务端使用的编码，编码列表可以在[这里](https://openkore.com/wiki/encoding)选择。如果发现连接后乱码，需要变更编码配置。
 
 一般中文搭建的 rAthena 服务端都是 GBK 编码。
 
